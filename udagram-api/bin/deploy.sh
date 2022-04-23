@@ -1,4 +1,5 @@
 echo hi we are at: $(pwd)
-eb init
+ls
+eb init udagram-api
 eb use udagram-api-dev
 eb deploy
