@@ -6,5 +6,10 @@ eb setenv POSTGRES_USER=postgres \
 POSTGRES_PASSWORD=postgres \
 POSTGRES_DB=udagram \
 DB_PORT=5432 \
-POSTGRES_HOST=udagram-db.cu8ywbspb3t6.us-east-1.rds.amazonaws.com
+POSTGRES_HOST=udagram-db.cu8ywbspb3t6.us-east-1.rds.amazonaws.com \
+AWS_REGION=us-east-1 \
+AWS_BUCKET=randomsat-b01 \
+AWS_PROFILE=default \
+JWT_SECRET=U\$hal!notPA\$s! \
+URL=http://udagram-api-app-dev.us-east-1.elasticbeanstalk.com/api/v0
 eb deploy
