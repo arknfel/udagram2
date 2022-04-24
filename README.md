@@ -62,7 +62,7 @@ The e2e tests are using Protractor and Jasmine.
 
 ## Usage
 RDS DB endpoint: `udagram-db.cu8ywbspb3t6.us-east-1.rds.amazonaws.com`  
-EB environment endpoint: `http://udagram-api-app-dev.us-east-1.elasticbeanstalk.com/`
+EB environment endpoint: `http://udagram-api-app-dev.us-east-1.elasticbeanstalk.com/`  
 S3 public website URL: `http://randomsat-b01.s3-website-us-east-1.amazonaws.com/`
 
 ## License
