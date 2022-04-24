@@ -8,9 +8,6 @@ orbs:
 jobs:
 
   build:
-
-    # The build job runs only when there are
-    # changes to the main/master branches
     filters:
       branches:
         only:
