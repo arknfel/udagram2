@@ -8,6 +8,15 @@ orbs:
 jobs:
 
   build:
+
+    # The build job runs only when there are
+    # changes to the main/master branches
+    filters:
+      branches:
+        only:
+          - main
+          - master
+
     docker:
       # the base image can run most needed actions with orbs
       - image: "cimg/base:stable"
@@ -28,6 +37,10 @@ jobs:
           command: |
             npm run backend:build
       - run:
+          name: backend-test
+          command: |
+            npm run backend:test
+      - run:
           name: backend-deploy
           command: |
             npm run backend:deploy
@@ -41,6 +54,10 @@ jobs:
           name: frontend-build
           command: |
             npm run frontend:build
+      - run:
+          name: frontend-test
+          command: |
+            npm run frontend:test
       - run:
           name: frontend-deploy
           command: |
