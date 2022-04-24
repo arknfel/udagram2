@@ -26,10 +26,10 @@ jobs:
           name: backend-build
           command: |
             npm run backend:build
-      - run:
-          name: backend-test
-          command: |
-            npm run backend:test
+      # - run:
+      #     name: backend-test
+      #     command: |
+      #       npm run backend:test
       - run:
           name: backend-deploy
           command: |
