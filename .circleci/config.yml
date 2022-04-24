@@ -1,7 +1,7 @@
 version: 2.1
 orbs:
   # orgs contain basc recipes and reproducible actions (install node, aws, etc.)
-  node: circleci/node@4.1.0
+  node: circleci/node@5.0.2
   aws-cli: circleci/aws-cli@3.0.0
   eb: circleci/aws-elastic-beanstalk@1.0.0
   # different jobs are calles later in the workflows sections
@@ -17,19 +17,19 @@ jobs:
       - aws-cli/setup
       - eb/setup
       - run: npm i yarn
-      - run:
-          name: Swap node versions
-          command: |
-            set +e
-            wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
-            export NVM_DIR="$HOME/.nvm"
-            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-            [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-            nvm install v16
-            nvm alias default 16.13.0
+      # - run:
+      #     name: Swap node versions
+      #     command: |
+      #       set +e
+      #       wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
+      #       export NVM_DIR="$HOME/.nvm"
+      #       [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+      #       [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+      #       nvm install v16
+      #       nvm alias default 16.13.0
 
-            echo 'export NVM_DIR="$HOME/.nvm"' >> $BASH_ENV
-            echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> $BASH_ENV
+      #       echo 'export NVM_DIR="$HOME/.nvm"' >> $BASH_ENV
+      #       echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> $BASH_ENV
 
       # Back-end
       - run:
