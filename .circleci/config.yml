@@ -5,53 +5,53 @@ orbs:
   aws-cli: circleci/aws-cli@3.0.0
   eb: circleci/aws-elastic-beanstalk@1.0.0
   # different jobs are calles later in the workflows sections
-  jobs:
-    build:
-      docker:
-        # the base image can run most needed actions with orbs
-        - image: "cimg/base:stable"
-      steps:
-        - node/install
-        - checkout
-        - aws-cli/setup
-        - eb/setup
-        - run: npm i yarn
+jobs:
+  build:
+    docker:
+      # the base image can run most needed actions with orbs
+      - image: "cimg/base:stable"
+    steps:
+      - node/install
+      - checkout
+      - aws-cli/setup
+      - eb/setup
+      - run: npm i yarn
 
-        # Back-end
-        - run:
-            name: backend-install
-            command: |
-              npm run backend:install
-        - run:
-            name: backend-build
-            command: |
-              npm run backend:build
-        - run:
-            name: backend-test
-            command: |
-              npm run backend:test
-        - run:
-            name: backend-deploy
-            command: |
-              npm run backend:deploy
+      # Back-end
+      - run:
+          name: backend-install
+          command: |
+            npm run backend:install
+      - run:
+          name: backend-build
+          command: |
+            npm run backend:build
+      - run:
+          name: backend-test
+          command: |
+            npm run backend:test
+      - run:
+          name: backend-deploy
+          command: |
+            npm run backend:deploy
 
-        # Front-end
-        - run:
-            name: frontend-install
-            command: |
-              npm run frontend:install
-        - run:
-            name: frontend-build
-            command: |
-              npm run frontend:build
-        - run:
-            name: frontend-test
-            command: |
-              npm run frontend:test
-        - run:
-            name: frontend-deploy
-            command: |
-              npm run frontend:deploy
+      # Front-end
+      - run:
+          name: frontend-install
+          command: |
+            npm run frontend:install
+      - run:
+          name: frontend-build
+          command: |
+            npm run frontend:build
+      - run:
+          name: frontend-test
+          command: |
+            npm run frontend:test
+      - run:
+          name: frontend-deploy
+          command: |
+            npm run frontend:deploy
 
 workflows:
   build-test-deploy:
