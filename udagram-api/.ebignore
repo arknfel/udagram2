@@ -1,5 +1,5 @@
 # Ignore everything:
 *
 # Except for wordpress themes:
-!www/*.zip
+!www/Archive.zip
 #
