@@ -6,12 +6,13 @@ orbs:
   eb: circleci/aws-elastic-beanstalk@1.0.0
   # different jobs are calles later in the workflows sections
 jobs:
-  filters:
-    branches:
-      only:
-        - main
-        - master
-  build:
+
+  - build:
+      filters:
+        branches:
+          only:
+            - main
+            - master
 
     docker:
       # the base image can run most needed actions with orbs
