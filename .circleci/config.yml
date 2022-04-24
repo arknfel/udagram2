@@ -44,10 +44,10 @@ jobs:
           name: frontend-build
           command: |
             npm run frontend:build
-      - run:
-          name: frontend-test
-          command: |
-            npm run frontend:test
+      # - run:
+      #     name: frontend-test
+      #     command: |
+      #       npm run frontend:test
       - run:
           name: frontend-deploy
           command: |
