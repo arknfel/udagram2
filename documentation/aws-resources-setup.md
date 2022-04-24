@@ -42,3 +42,6 @@ A run book guide to create and configure the AWS resources that we will be using
 
 
 ## S3
+
+1. `aws s3 mb s3://randommon-b01` to create s3 bucket.  
+2. `aws s3 website s3://randomfri-b01/ --index-document index.html` to enable the bucket as a public website.  
